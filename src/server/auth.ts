@@ -58,11 +58,15 @@ export const authOptions: NextAuthOptions = {
       // You can pass any HTML attribute to the <input> tag through the object.
       credentials: {
         email: {
-          label: "Username",
+          label: "Email",
           type: "text",
           placeholder: "name@euri.com",
         },
-        password: { label: "Password", type: "password" },
+        password: {
+          label: "Password",
+          type: "password",
+          placeholder: "welcome12345",
+        },
       },
       authorize(credentials) {
         const users = [
@@ -70,9 +74,14 @@ export const authOptions: NextAuthOptions = {
             id: "1",
             name: "Peter",
             email: "peter@euri.com",
-            password: "12345",
+            password: "welcome12345",
           },
-          { id: "2", name: "John", email: "john@euri.com", password: "12345" },
+          {
+            id: "2",
+            name: "John",
+            email: "john@euri.com",
+            password: "welcome12345",
+          },
         ];
         const user = users.find(
           (user) =>
