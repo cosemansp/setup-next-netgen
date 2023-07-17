@@ -57,10 +57,6 @@ export const authOptions: NextAuthOptions = {
       // e.g. domain, username, password, 2FA token, etc.
       // You can pass any HTML attribute to the <input> tag through the object.
       credentials: {
-        name: {
-          label: "Name",
-          type: "text",
-        },
         email: {
           label: "Username",
           type: "text",
@@ -69,16 +65,21 @@ export const authOptions: NextAuthOptions = {
         password: { label: "Password", type: "password" },
       },
       authorize(credentials) {
-        // console.log("credentials", credentials);
-        if (credentials?.password === "12345") {
-          //
-          // lookup user based on the email
-          //
-          const user = {
+        const users = [
+          {
             id: "1",
-            name: credentials.name,
-            email: credentials.email,
-          };
+            name: "Peter",
+            email: "peter@euri.com",
+            password: "12345",
+          },
+          { id: "2", name: "John", email: "john@euri.com", password: "12345" },
+        ];
+        const user = users.find(
+          (user) =>
+            user.email === credentials?.email &&
+            user.password === credentials?.password
+        );
+        if (user) {
           return user;
         }
 
