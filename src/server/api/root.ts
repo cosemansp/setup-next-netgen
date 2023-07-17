@@ -1,5 +1,6 @@
-import { exampleRouter } from "~/server/api/routers/example";
-import { createTRPCRouter } from "~/server/api/trpc";
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
+import { exampleRouter } from "@/server/api/routers/example";
+import { createTRPCRouter } from "@/server/api/trpc";
 
 /**
  * This is the primary router for your server.

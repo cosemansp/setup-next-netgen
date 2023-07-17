@@ -8,7 +8,7 @@ import {
 import AzureProvider from "next-auth/providers/azure-ad";
 import { type JWT } from "next-auth/jwt";
 
-import { env } from "~/env.mjs";
+import { env } from "@/env.mjs";
 
 /**
  * Module augmentation for `next-auth` types. Allows us to add custom properties to the `session`
